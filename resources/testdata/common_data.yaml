@@ -1,0 +1,21 @@
+# Username and password for login
+account_information:
+  account_01: #Login with empty username
+    username: null
+    password: null
+    error_message: You need to enter login name
+  account_02: #Login with invalid username
+    username: supakpong@gosoft.co.th
+    password: rG6FgsZ753FbZt-
+    error_message: ชื่อหรือรหัสผ่านของท่านไม่ถูกต้อง กรุณาตรวจสอบและกรอกข้อมูลอีกครั้ง
+  account_03: #Login with invalid password
+    username: supakpongpir@gosoft.co.th
+    password: rG6FgsZ7
+    error_message: ชื่อหรือรหัสผ่านของท่านไม่ถูกต้อง กรุณาตรวจสอบและกรอกข้อมูลอีกครั้ง
+  account_04: #Login with invalid username and password
+    username: supakpong@gosoft.co.th
+    password: rG6FgsZ7
+    error_message: ชื่อหรือรหัสผ่านของท่านไม่ถูกต้อง กรุณาตรวจสอบและกรอกข้อมูลอีกครั้ง
+  account_05: #Login with valid username and password
+    username: supakpongpir@gosoft.co.th
+    password: rG6FgsZ753FbZt-

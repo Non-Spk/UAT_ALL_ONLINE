@@ -1,0 +1,9 @@
+device:
+  remote_url: http://localhost:4723/wd/hub
+  platform_name: android
+  platform_version: "9"
+  device_name: 0123456789ABCDEF
+
+app_path:
+  package: th.co.gosoft.allonline.uat
+  activity: th.co.gosoft.allonline.presentation.splashscreen.SplashScreenActivity

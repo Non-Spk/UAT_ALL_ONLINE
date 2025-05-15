@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-14T17:52:11.216428" rpa="false" schemaversion="5">
+<suite id="s1" name="Storecode login" source="D:\GoDev\project\Uat_all_online\testcases\ui\Storecode_login.robot">
+<test id="s1-t1" name="Case 01 - Login Storecode with null value." line="5">
+<kw name="Storecode Login" owner="all_online_storecode_login_feature">
+<kw name="User login" owner="all_online_user_login_feature">
+<kw name="Open Application" owner="common">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>remote_url=${device['remote_url']}</arg>
+<arg>platformName=${device['platform_name']}</arg>
+<arg>platformVersion=${device['platform_version']}</arg>
+<arg>deviceName=${device['device_name']}</arg>
+<arg>appPackage=${app_path['package']}</arg>
+<arg>appActivity=${app_path['activity']}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-05-14T17:52:11.417133" elapsed="15.293971"/>
+</kw>
+<tag>Open App</tag>
+<status status="PASS" start="2025-05-14T17:52:11.416856" elapsed="15.294555"/>
+</kw>
+<kw name="Click Sign In Corporate btn" owner="all_online_signin_message_page">
+<kw name="Tap Element" owner="common">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2025-05-14T17:52:32.019853" level="INFO">xpath criteria: //android.widget.Button[@text="cpall."]
+xpath criteria: //android.widget.Button[@text="cpall."]
+xpath criteria: //android.widget.Button[@text="cpall."]
+xpath criteria: //android.widget.Button[@text="cpall."]
+xpath criteria: //android.widget.Button[@text="cpall."]
+xpath criteria: //android.widget.Button[@text="cpall."]</msg>
+<arg>${element_locator}</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2025-05-14T17:52:26.712659" elapsed="5.307372"/>
+</kw>
+<kw name="Get Element Location" owner="AppiumLibrary">
+<msg time="2025-05-14T17:52:32.650894" level="INFO">Element 'xpath=//android.widget.Button[@text="cpall."]' location: {'x': 400, 'y': 488} </msg>
+<msg time="2025-05-14T17:52:32.650970" level="INFO">xpath criteria: //android.widget.Button[@text="cpall."]</msg>
+<msg time="2025-05-14T17:52:32.651036" level="INFO">${position} = {'x': 400, 'y': 488}</msg>
+<var>${position}</var>
+<arg>${element_locator}</arg>
+<doc>Get element location</doc>
+<status status="PASS" start="2025-05-14T17:52:32.020364" elapsed="0.630692"/>
+</kw>
+<kw name="Get Element Size" owner="AppiumLibrary">
+<msg time="2025-05-14T17:52:33.032392" level="INFO">Element 'xpath=//android.widget.Button[@text="cpall."]' size: {'height': 52, 'width': 400} </msg>
+<msg time="2025-05-14T17:52:33.032525" level="INFO">xpath criteria: //android.widget.Button[@text="cpall."]</msg>
+<msg time="2025-05-14T17:52:33.032665" level="INFO">${size} = {'height': 52, 'width': 400}</msg>
+<var>${size}</var>
+<arg>${element_locator}</arg>
+<doc>Get element size</doc>
+<status status="PASS" start="2025-05-14T17:52:32.651200" elapsed="0.381509"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-14T17:52:33.034054" level="INFO">${center_x} = 600.0</msg>
+<var>${center_x}</var>
+<arg>float($position.get('x', 0)) + float($size.get('width', 0)) / 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-14T17:52:33.033394" elapsed="0.000719"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-14T17:52:33.034834" level="INFO">${center_y} = 514.0</msg>
+<var>${center_y}</var>
+<arg>float($position.get('y', 0)) + float($size.get('height', 0)) / 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-14T17:52:33.034377" elapsed="0.000503"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-05-14T17:52:33.035410" level="INFO">@{tap_coordinates} = [ 600.0 | 514.0 ]</msg>
+<var>@{tap_coordinates}</var>
+<arg>${center_x}</arg>
+<arg>${center_y}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-14T17:52:33.035081" elapsed="0.000374"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-05-14T17:52:33.035897" level="INFO">@{positions} = [ [600.0, 514.0] ]</msg>
+<var>@{positions}</var>
+<arg>${tap_coordinates}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-14T17:52:33.035644" elapsed="0.000297"/>
+</kw>
+<kw name="Tap With Positions" owner="AppiumLibrary">
+<arg>500</arg>
+<arg>@{positions}</arg>
+<doc>Taps on a particular place with up to five fingers, holding for a
+certain time</doc>
+<status status="PASS" start="2025-05-14T17:52:33.036127" elapsed="0.874249"/>
+</kw>
+<arg>xpath=//android.widget.Button[@text="cpall."]</arg>
+<doc>tap center of element by locator</doc>
+<status status="PASS" start="2025-05-14T17:52:26.712273" elapsed="7.198366"/>
+</kw>
+<tag>Sign In</tag>
+<status status="PASS" start="2025-05-14T17:52:26.711798" elapsed="7.198963"/>
+</kw>
+<kw name="Sign In" owner="all_online_signin_page">
+<kw name="Type Into Textbox" owner="common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-14T17:52:33.913461" level="INFO">${is_text_valid} = True</msg>
+<var>${is_text_valid}</var>
+<arg>$text is not None and $text != "None" and $text != ""</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-14T17:52:33.913013" elapsed="0.000518"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2025-05-14T17:52:37.904366" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="login"]
+xpath criteria: //android.widget.EditText[@resource-id="login"]
+xpath criteria: //android.widget.EditText[@resource-id="login"]
+xpath criteria: //android.widget.EditText[@resource-id="login"]
+xpath criteria: //android.widget.EditText[@resource-id="login"]
+xpath criteria: //android.widget.EditText[@resource-id="login"]</msg>
+<arg>${locator}</arg>
+<arg>60s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2025-05-14T17:52:33.914071" elapsed="3.990378"/>
+</kw>
+<arg>${is_text_valid}</arg>
+<arg>AppiumLibrary.Wait Until Page Contains Element</arg>
+<arg>${locator}</arg>
+<arg>60s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-14T17:52:33.913768" elapsed="3.990758"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-05-14T17:52:37.905695" level="INFO">Typing text 'supakpongpir@gosoft.co.th' into text field 'xpath=//android.widget.EditText[@resource-id="login"]'</msg>
+<msg time="2025-05-14T17:52:38.368504" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="login"]</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-14T17:52:37.904890" elapsed="0.463760"/>
+</kw>
+<arg>${is_text_valid}</arg>
+<arg>AppiumLibrary.Input Text</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-14T17:52:37.904680" elapsed="0.464118"/>
+</kw>
+<arg>${all_online_signin_locator['txt_username']}</arg>
+<arg>${username}</arg>
+<status status="PASS" start="2025-05-14T17:52:33.911941" elapsed="4.456979"/>
+</kw>
+<kw name="Type Into Textbox" owner="common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-14T17:52:38.370817" level="INFO">${is_text_valid} = True</msg>
+<var>${is_text_valid}</var>
+<arg>$text is not None and $text != "None" and $text != ""</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-14T17:52:38.370361" elapsed="0.000753"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2025-05-14T17:52:38.698960" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="passwd"]</msg>
+<arg>${locator}</arg>
+<arg>60s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2025-05-14T17:52:38.371750" elapsed="0.327360"/>
+</kw>
+<arg>${is_text_valid}</arg>
+<arg>AppiumLibrary.Wait Until Page Contains Element</arg>
+<arg>${locator}</arg>
+<arg>60s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-14T17:52:38.371389" elapsed="0.327872"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-05-14T17:52:38.701568" level="INFO">Typing text 'rG6FgsZ753FbZt-' into text field 'xpath=//android.widget.EditText[@resource-id="passwd"]'</msg>
+<msg time="2025-05-14T17:52:39.129824" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="passwd"]</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-05-14T17:52:38.699961" elapsed="0.430007"/>
+</kw>
+<arg>${is_text_valid}</arg>
+<arg>AppiumLibrary.Input Text</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-14T17:52:38.699573" elapsed="0.430525"/>
+</kw>
+<arg>${all_online_signin_locator['txt_password']}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-14T17:52:38.369261" elapsed="0.760950"/>
+</kw>
+<kw name="Tap Element" owner="common">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2025-05-14T17:52:39.431653" level="INFO">xpath criteria: //android.view.View[@content-desc="Log On"]</msg>
+<arg>${element_locator}</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2025-05-14T17:52:39.131524" elapsed="0.300200"/>
+</kw>
+<kw name="Get Element Location" owner="AppiumLibrary">
+<msg time="2025-05-14T17:52:39.734508" level="INFO">Element 'xpath=//android.view.View[@content-desc="Log On"]' location: {'x': 475, 'y': 1100} </msg>
+<msg time="2025-05-14T17:52:39.734575" level="INFO">xpath criteria: //android.view.View[@content-desc="Log On"]</msg>
+<msg time="2025-05-14T17:52:39.734630" level="INFO">${position} = {'x': 475, 'y': 1100}</msg>
+<var>${position}</var>
+<arg>${element_locator}</arg>
+<doc>Get element location</doc>
+<status status="PASS" start="2025-05-14T17:52:39.431872" elapsed="0.302776"/>
+</kw>
+<kw name="Get Element Size" owner="AppiumLibrary">
+<msg time="2025-05-14T17:52:40.194124" level="INFO">Element 'xpath=//android.view.View[@content-desc="Log On"]' size: {'height': 56, 'width': 482} </msg>
+<msg time="2025-05-14T17:52:40.194284" level="INFO">xpath criteria: //android.view.View[@content-desc="Log On"]</msg>
+<msg time="2025-05-14T17:52:40.194441" level="INFO">${size} = {'height': 56, 'width': 482}</msg>
+<var>${size}</var>
+<arg>${element_locator}</arg>
+<doc>Get element size</doc>
+<status status="PASS" start="2025-05-14T17:52:39.734790" elapsed="0.459703"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-14T17:52:40.195551" level="INFO">${center_x} = 716.0</msg>
+<var>${center_x}</var>
+<arg>float($position.get('x', 0)) + float($size.get('width', 0)) / 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-14T17:52:40.194849" elapsed="0.000765"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-14T17:52:40.196459" level="INFO">${center_y} = 1128.0</msg>
+<var>${center_y}</var>
+<arg>float($position.get('y', 0)) + float($size.get('height', 0)) / 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-14T17:52:40.195873" elapsed="0.000639"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-05-14T17:52:40.197052" level="INFO">@{tap_coordinates} = [ 716.0 | 1128.0 ]</msg>
+<var>@{tap_coordinates}</var>
+<arg>${center_x}</arg>
+<arg>${center_y}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-14T17:52:40.196724" elapsed="0.000380"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-05-14T17:52:40.197538" level="INFO">@{positions} = [ [716.0, 1128.0] ]</msg>
+<var>@{positions}</var>
+<arg>${tap_coordinates}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-14T17:52:40.197300" elapsed="0.000281"/>
+</kw>
+<kw name="Tap With Positions" owner="AppiumLibrary">
+<arg>500</arg>
+<arg>@{positions}</arg>
+<doc>Taps on a particular place with up to five fingers, holding for a
+certain time</doc>
+<status status="PASS" start="2025-05-14T17:52:40.197763" elapsed="0.821952"/>
+</kw>
+<arg>${all_online_signin_locator['btn_signin']}</arg>
+<doc>tap center of element by locator</doc>
+<status status="PASS" start="2025-05-14T17:52:39.130565" elapsed="1.889369"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<tag>Sign In</tag>
+<status status="PASS" start="2025-05-14T17:52:33.911157" elapsed="7.108888"/>
+</kw>
+<arg>${account_information['account_05']['username']}</arg>
+<arg>${account_information['account_05']['password']}</arg>
+<tag>Open App</tag>
+<status status="PASS" start="2025-05-14T17:52:11.416222" elapsed="29.603929"/>
+</kw>
+<kw name="Type Store Code" owner="all_online_type_storecode_page">
+<kw name="Type Into Textbox" owner="common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-14T17:52:41.022713" level="INFO">${is_text_valid} = False</msg>
+<var>${is_text_valid}</var>
+<arg>$text is not None and $text != "None" and $text != ""</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-14T17:52:41.022267" elapsed="0.000501"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_text_valid}</arg>
+<arg>AppiumLibrary.Wait Until Page Contains Element</arg>
+<arg>${locator}</arg>
+<arg>60s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-14T17:52:41.023015" elapsed="0.000188"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_text_valid}</arg>
+<arg>AppiumLibrary.Input Text</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-14T17:52:41.023398" elapsed="0.000145"/>
+</kw>
+<arg>${all_online_type_storecode_locator['txt_storecode']}</arg>
+<arg>${StoreCode}</arg>
+<status status="PASS" start="2025-05-14T17:52:41.021175" elapsed="0.002462"/>
+</kw>
+<kw name="Tap Element" owner="common">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2025-05-14T17:52:43.814171" level="INFO">xpath criteria: //android.widget.Button[@resource-id="th.co.gosoft.allonline.uat:id/btnLogin"]
+xpath criteria: //android.widget.Button[@resource-id="th.co.gosoft.allonline.uat:id/btnLogin"]
+xpath criteria: //android.widget.Button[@resource-id="th.co.gosoft.allonline.uat:id/btnLogin"]</msg>
+<arg>${element_locator}</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" start="2025-05-14T17:52:41.024615" elapsed="2.789722"/>
+</kw>
+<kw name="Get Element Location" owner="AppiumLibrary">
+<msg time="2025-05-14T17:52:44.005402" level="INFO">Element 'xpath=//android.widget.Button[@resource-id="th.co.gosoft.allonline.uat:id/btnLogin"]' location: {'x': 621, 'y': 790} </msg>
+<msg time="2025-05-14T17:52:44.005571" level="INFO">xpath criteria: //android.widget.Button[@resource-id="th.co.gosoft.allonline.uat:id/btnLogin"]</msg>
+<msg time="2025-05-14T17:52:44.005640" level="INFO">${position} = {'x': 621, 'y': 790}</msg>
+<var>${position}</var>
+<arg>${element_locator}</arg>
+<doc>Get element location</doc>
+<status status="PASS" start="2025-05-14T17:52:43.814685" elapsed="0.190974"/>
+</kw>
+<kw name="Get Element Size" owner="AppiumLibrary">
+<msg time="2025-05-14T17:52:44.181376" level="INFO">Element 'xpath=//android.widget.Button[@resource-id="th.co.gosoft.allonline.uat:id/btnLogin"]' size: {'height': 77, 'width': 359} </msg>
+<msg time="2025-05-14T17:52:44.181468" level="INFO">xpath criteria: //android.widget.Button[@resource-id="th.co.gosoft.allonline.uat:id/btnLogin"]</msg>
+<msg time="2025-05-14T17:52:44.181552" level="INFO">${size} = {'height': 77, 'width': 359}</msg>
+<var>${size}</var>
+<arg>${element_locator}</arg>
+<doc>Get element size</doc>
+<status status="PASS" start="2025-05-14T17:52:44.005803" elapsed="0.175775"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-14T17:52:44.182342" level="INFO">${center_x} = 800.5</msg>
+<var>${center_x}</var>
+<arg>float($position.get('x', 0)) + float($size.get('width', 0)) / 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-14T17:52:44.181781" elapsed="0.000596"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-14T17:52:44.182762" level="INFO">${center_y} = 828.5</msg>
+<var>${center_y}</var>
+<arg>float($position.get('y', 0)) + float($size.get('height', 0)) / 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-14T17:52:44.182530" elapsed="0.000259"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-05-14T17:52:44.183058" level="INFO">@{tap_coordinates} = [ 800.5 | 828.5 ]</msg>
+<var>@{tap_coordinates}</var>
+<arg>${center_x}</arg>
+<arg>${center_y}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-14T17:52:44.182895" elapsed="0.000187"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-05-14T17:52:44.183317" level="INFO">@{positions} = [ [800.5, 828.5] ]</msg>
+<var>@{positions}</var>
+<arg>${tap_coordinates}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-14T17:52:44.183179" elapsed="0.000163"/>
+</kw>
+<kw name="Tap With Positions" owner="AppiumLibrary">
+<arg>500</arg>
+<arg>@{positions}</arg>
+<doc>Taps on a particular place with up to five fingers, holding for a
+certain time</doc>
+<status status="PASS" start="2025-05-14T17:52:44.183446" elapsed="0.838142"/>
+</kw>
+<arg>${all_online_type_storecode_locator['btn_submit']}</arg>
+<doc>tap center of element by locator</doc>
+<status status="PASS" start="2025-05-14T17:52:41.023889" elapsed="3.997802"/>
+</kw>
+<arg>${StoreCode}</arg>
+<tag>Input</tag>
+<tag>StoreCode</tag>
+<status status="PASS" start="2025-05-14T17:52:41.020554" elapsed="4.001183"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-14T17:52:45.022118" level="INFO">${is_error_message} = True</msg>
+<var>${is_error_message}</var>
+<arg>$error_message is not None and $error_message != "None" and $error_message != ""</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-14T17:52:45.021857" elapsed="0.000285"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Verify Error Message" owner="all_online_error_storecode_page">
+<kw name="Verify Element Text" owner="common">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<msg time="2025-05-14T17:53:09.467129" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\jsonwp-proxy\proxy.js:274:13)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.commands.getScreenshot (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-uiautomator2-driver\lib\commands\screenshot.js:14:10)</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2025-05-14T17:53:09.459530" elapsed="0.010978">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\jsonwp-proxy\proxy.js:274:13)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.commands.getScreenshot (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-uiautomator2-driver\lib\commands\screenshot.js:14:10)</status>
+</kw>
+<msg time="2025-05-14T17:53:09.471221" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\jsonwp-proxy\proxy.js:274:13)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.commands.getScreenshot (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-uiautomator2-driver\lib\commands\screenshot.js:14:10)</msg>
+<msg time="2025-05-14T17:53:09.472134" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]
+xpath criteria: //android.widget.TextView[@resource-id="th.co.gosoft.allonline.uat:id/txtContent"]</msg>
+<msg time="2025-05-14T17:53:09.472295" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\jsonwp-proxy\proxy.js:274:13)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.helpers.doFindElementOrEls (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-uiautomator2-driver\lib\commands\find.js:30:12)
+    at doFind (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:36:17)
+    at wrappedCondFn (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\timeout.js:151:12)
+    at spin (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:138:20)
+    at waitForCondition (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:155:10)
+    at AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\timeout.js:153:10)
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:60:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\find.js:33:12)
+    at AndroidUiautomator2Driver.findElements (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\find.js:63:10)</msg>
+<arg>${locator}</arg>
+<arg>60s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="FAIL" start="2025-05-14T17:52:45.023067" elapsed="24.450388">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\jsonwp-proxy\proxy.js:274:13)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.helpers.doFindElementOrEls (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-uiautomator2-driver\lib\commands\find.js:30:12)
+    at doFind (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:36:17)
+    at wrappedCondFn (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\timeout.js:151:12)
+    at spin (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:138:20)
+    at waitForCondition (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:155:10)
+    at AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\timeout.js:153:10)
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:60:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\find.js:33:12)
+    at AndroidUiautomator2Driver.findElements (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\find.js:63:10)</status>
+</kw>
+<kw name="Get Text" owner="AppiumLibrary">
+<var>${result}</var>
+<arg>${locator}</arg>
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<status status="NOT RUN" start="2025-05-14T17:53:09.473619" elapsed="0.000030"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${text}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2025-05-14T17:53:09.473738" elapsed="0.000019"/>
+</kw>
+<arg>${all_online_error_storecode_locator['txt_error_message']}</arg>
+<arg>${error_message}</arg>
+<status status="FAIL" start="2025-05-14T17:52:45.022659" elapsed="24.451201">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\jsonwp-proxy\proxy.js:274:13)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.helpers.doFindElementOrEls (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-uiautomator2-driver\lib\commands\find.js:30:12)
+    at doFind (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:36:17)
+    at wrappedCondFn (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\timeout.js:151:12)
+    at spin (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:138:20)
+    at waitForCondition (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:155:10)
+    at AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\timeout.js:153:10)
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:60:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\find.js:33:12)
+    at AndroidUiautomator2Driver.findElements (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\find.js:63:10)</status>
+</kw>
+<arg>${error_message}</arg>
+<tag>Error</tag>
+<tag>FAIL</tag>
+<tag>StoreCode</tag>
+<status status="FAIL" start="2025-05-14T17:52:45.022446" elapsed="24.451576">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\jsonwp-proxy\proxy.js:274:13)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.helpers.doFindElementOrEls (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-uiautomator2-driver\lib\commands\find.js:30:12)
+    at doFind (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:36:17)
+    at wrappedCondFn (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\timeout.js:151:12)
+    at spin (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:138:20)
+    at waitForCondition (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:155:10)
+    at AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\timeout.js:153:10)
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:60:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\find.js:33:12)
+    at AndroidUiautomator2Driver.findElements (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\find.js:63:10)</status>
+</kw>
+<arg>${is_error_message}</arg>
+<arg>all_online_error_storecode_page.Verify Error Message</arg>
+<arg>${error_message}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2025-05-14T17:52:45.022247" elapsed="24.451841">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\jsonwp-proxy\proxy.js:274:13)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.helpers.doFindElementOrEls (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-uiautomator2-driver\lib\commands\find.js:30:12)
+    at doFind (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:36:17)
+    at wrappedCondFn (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\timeout.js:151:12)
+    at spin (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:138:20)
+    at waitForCondition (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:155:10)
+    at AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\timeout.js:153:10)
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:60:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\find.js:33:12)
+    at AndroidUiautomator2Driver.findElements (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\find.js:63:10)</status>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not ${is_error_message}</arg>
+<arg>AppiumLibrary.Wait Until Page Contains Element</arg>
+<arg>${all_online_homepage_locator['cnt_homepage']}</arg>
+<arg>60s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-14T17:53:09.474208" elapsed="0.000023"/>
+</kw>
+<kw name="Close Application" owner="common">
+<tag>Close App</tag>
+<status status="NOT RUN" start="2025-05-14T17:53:09.474369" elapsed="0.000025"/>
+</kw>
+<arg>${all_online_type_storecode_01['store_code']}</arg>
+<arg>${all_online_type_storecode_01['error_message']}</arg>
+<tag>Open App</tag>
+<status status="FAIL" start="2025-05-14T17:52:11.415447" elapsed="58.059021">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\jsonwp-proxy\proxy.js:274:13)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.helpers.doFindElementOrEls (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-uiautomator2-driver\lib\commands\find.js:30:12)
+    at doFind (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:36:17)
+    at wrappedCondFn (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\timeout.js:151:12)
+    at spin (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:138:20)
+    at waitForCondition (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:155:10)
+    at AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\timeout.js:153:10)
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:60:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\find.js:33:12)
+    at AndroidUiautomator2Driver.findElements (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\find.js:63:10)</status>
+</kw>
+<kw name="Debug" owner="DebugLibrary">
+<doc>Open a interactive shell, run any RobotFramework keywords.</doc>
+<status status="NOT RUN" start="2025-05-14T17:53:09.474808" elapsed="0.000029"/>
+</kw>
+<status status="FAIL" start="2025-05-14T17:52:11.414836" elapsed="58.060209">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\jsonwp-proxy\proxy.js:274:13)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.helpers.doFindElementOrEls (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-uiautomator2-driver\lib\commands\find.js:30:12)
+    at doFind (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:36:17)
+    at wrappedCondFn (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\timeout.js:151:12)
+    at spin (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:138:20)
+    at waitForCondition (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:155:10)
+    at AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\timeout.js:153:10)
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:60:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\find.js:33:12)
+    at AndroidUiautomator2Driver.findElements (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\basedriver\commands\find.js:63:10)</status>
+</test>
+<test id="s1-t2" name="Case 02 - Login Storecode with invalid value." line="11">
+<kw name="Storecode Login" owner="all_online_storecode_login_feature">
+<kw name="User login" owner="all_online_user_login_feature">
+<kw name="Open Application" owner="common">
+<kw name="Open Application" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2025-05-14T17:53:24.926594" elapsed="0.000253">Execution terminated by signal</status>
+</kw>
+<msg time="2025-05-14T17:53:24.928199" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<arg>remote_url=${device['remote_url']}</arg>
+<arg>platformName=${device['platform_name']}</arg>
+<arg>platformVersion=${device['platform_version']}</arg>
+<arg>deviceName=${device['device_name']}</arg>
+<arg>appPackage=${app_path['package']}</arg>
+<arg>appActivity=${app_path['activity']}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="FAIL" start="2025-05-14T17:53:09.477503" elapsed="15.451543">Execution terminated by signal</status>
+</kw>
+<tag>Open App</tag>
+<status status="FAIL" start="2025-05-14T17:53:09.477180" elapsed="15.452120">Execution terminated by signal</status>
+</kw>
+<kw name="Click Sign In Corporate btn" owner="all_online_signin_message_page">
+<tag>Sign In</tag>
+<status status="NOT RUN" start="2025-05-14T17:53:24.929596" elapsed="0.000055"/>
+</kw>
+<kw name="Sign In" owner="all_online_signin_page">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<tag>Sign In</tag>
+<status status="NOT RUN" start="2025-05-14T17:53:24.929864" elapsed="0.000041"/>
+</kw>
+<arg>${account_information['account_05']['username']}</arg>
+<arg>${account_information['account_05']['password']}</arg>
+<tag>Open App</tag>
+<status status="FAIL" start="2025-05-14T17:53:09.476590" elapsed="15.453434">Execution terminated by signal</status>
+</kw>
+<kw name="Type Store Code" owner="all_online_type_storecode_page">
+<arg>${StoreCode}</arg>
+<tag>Input</tag>
+<tag>StoreCode</tag>
+<status status="NOT RUN" start="2025-05-14T17:53:24.930242" elapsed="0.000039"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${is_error_message}</var>
+<arg>$error_message is not None and $error_message != "None" and $error_message != ""</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-05-14T17:53:24.930441" elapsed="0.000035"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_error_message}</arg>
+<arg>all_online_error_storecode_page.Verify Error Message</arg>
+<arg>${error_message}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-14T17:53:24.930657" elapsed="0.000037"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not ${is_error_message}</arg>
+<arg>AppiumLibrary.Wait Until Page Contains Element</arg>
+<arg>${all_online_homepage_locator['cnt_homepage']}</arg>
+<arg>60s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-14T17:53:24.930847" elapsed="0.000036"/>
+</kw>
+<kw name="Close Application" owner="common">
+<tag>Close App</tag>
+<status status="NOT RUN" start="2025-05-14T17:53:24.931115" elapsed="0.000040"/>
+</kw>
+<arg>${all_online_type_storecode_02['store_code']}</arg>
+<arg>${all_online_type_storecode_02['error_message']}</arg>
+<tag>Open App</tag>
+<status status="FAIL" start="2025-05-14T17:53:09.475951" elapsed="15.455318">Execution terminated by signal</status>
+</kw>
+<status status="FAIL" start="2025-05-14T17:53:09.475651" elapsed="15.456211">Execution terminated by signal</status>
+</test>
+<test id="s1-t3" name="Case 03 - Login Storecode with valid value." line="16">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-05-14T17:53:24.932892" elapsed="0.000548">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" start="2025-05-14T17:52:11.217490" elapsed="73.717143"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat info="combined" combined="NOT robot:exit" pass="0" fail="2" skip="0">NOT robot:exit</stat>
+</tag>
+<suite>
+<stat name="Storecode login" id="s1" pass="0" fail="3" skip="0">Storecode login</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-14T17:53:09.471221" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\jsonwp-proxy\proxy.js:274:13)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at AndroidUiautomator2Driver.commands.getScreenshot (C:\Users\S.Pirabunjongrat\AppData\Local\Programs\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-uiautomator2-driver\lib\commands\screenshot.js:14:10)</msg>
+<msg time="2025-05-14T17:53:24.928199" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+</errors>
+</robot>
